@@ -1,0 +1,27 @@
+﻿<Window x:Class="Dormitory_System.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dormitory_System.Views"
+        xmlns:vm="clr-namespace:Dormitory_System.ViewModels"
+        mc:Ignorable="d"
+        Title="Система управления общежитием" Height="450" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Верхняя панель (Приветствие и выход) -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="LightBlue">
+            <TextBlock Text="{Binding CurrentUser.Username}" FontSize="14" FontWeight="Bold" Margin="0,0,20,0"/>
+            <TextBlock Text="{Binding CurrentUser.RoleName}" FontSize="14" Margin="0,0,20,0"/>
+            <Button Content="Выйти" Command="{Binding LogoutCommand}" Width="80" Height="25"/>
+        </StackPanel>
+
+        <!-- Основная область (Разный контент для разных ролей) -->
+        <ContentControl Grid.Row="1" Content="{Binding CurrentView}"/>
+    </Grid>
+</Window>

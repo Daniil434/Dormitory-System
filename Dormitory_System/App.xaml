@@ -1,0 +1,11 @@
+﻿<Application x:Class="Dormitory_System.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Dormitory_System"
+             xmlns:converters="clr-namespace:Dormitory_System.Converters"
+             StartupUri="Views/LoginView.xaml">
+    <Application.Resources>
+        <converters:VisibilityRoleConverter x:Key="VisibilityRoleConverter"/>
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </Application.Resources>
+</Application>
